@@ -8,7 +8,7 @@ import {
 
 // import Transaction from './Transaction';
 
-@Entity('category')
+@Entity('categories')
 class Category {
   @PrimaryGeneratedColumn('increment')
   id: string;

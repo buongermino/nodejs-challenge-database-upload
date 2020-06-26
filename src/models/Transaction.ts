@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   JoinColumn,
-  OneToOne,
+  ManyToOne,
 } from 'typeorm';
 
 import Category from './Category';
@@ -27,7 +27,7 @@ class Transaction {
   @Column() // deve ser chave estrangeira
   category_id: string;
 
-  @OneToOne(() => Category)
+  @ManyToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
   category: Category;
 
