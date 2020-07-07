@@ -17,7 +17,7 @@ Ao gerar uma nova transação, ele criará uma nova categoria contendo seu próp
 
 Para fazer as requisições HTTP, utilize um software de preferência (postman, insomnia).
 
-A transação deve ser criada no seguinte formato JSON, utilizando a requisição HTTP do tipo POST:
+A transação deve ser criada no seguinte formato JSON, utilizando a requisição HTTP com método POST:
 ```
 {
   "title": "Salário",
