@@ -1,14 +1,15 @@
 # NodeJS API - Database Upload
 Desafio do bootcamp GoStack com NodeJS e Typescrypt, utilizando tecnologias como: 
-- docker 
-- typeORM 
+- Docker 
+- TypeORM 
 - PostgresSQL
 
 Técnicas de migrations aplicadas para gerar tabelas no banco de dados, criação de registros, leitura, atualização e upload de arquivos.
 
 Para inicializar,  executar o comando ``yarn`` no terminal para instalar todas as dependências. 
-Em seguida, é necessário ter uma imagem de um banco de dados PostgresSQL inicializada via docker e uma database denominada gostack_desafio06 criada em um sistema gerenciador de banco de dados.
-Feito isso, executar no terminal o comando ``yarn typeorm migration:run``. Este comando criará todas as tabelas e respectivas colunas no banco de dados. Para desfazer o comando, digitar ``yarn typeorm migration:revert``. Esse comando irá DELETAR todas as tabelas criadas a partir desta aplicação
+Em seguida, é necessário ter uma imagem de um banco de dados PostgresSQL inicializada via docker e uma database denominada gostack_desafio06 criada em um sistema gerenciador de banco de dados. [Clique aqui para saber mais](https://hub.docker.com/_/postgres).
+
+Feito isso, executar no terminal o comando ``yarn typeorm migration:run``. Este comando criará todas as tabelas e respectivas colunas no banco de dados. Para desfazer o comando, digitar ``yarn typeorm migration:revert``. **Esse comando irá DELETAR todas as tabelas criadas a partir desta aplicação**
 
 Após criar as tabelas, executar no terminal o comando ``yarn dev:server`` para inciar a aplicação.
 
@@ -17,7 +18,7 @@ Ao gerar uma nova transação, ele criará uma nova categoria contendo seu próp
 
 Para fazer as requisições HTTP, utilize um software de preferência (postman, insomnia).
 
-A transação deve ser criada no seguinte formato JSON, utilizando a requisição HTTP com método POST:
+A transação deve ser criada no seguinte formato JSON, utilizando a requisição HTTP com método **POST**:
 ```
 {
   "title": "Salário",
@@ -27,7 +28,7 @@ A transação deve ser criada no seguinte formato JSON, utilizando a requisiçã
 }
 ```
 
-Ao usar a requisição HTTP do tipo GET, será exibido, além de todas as transacções armazenadas no banco de dados, a data da criação, data de atualização e também um balanço que contém todos os valor de entrada, saída, e o total:
+Ao usar a requisição HTTP do tipo **GET**, será exibido, além de todas as transacções armazenadas no banco de dados, a data da criação, data de atualização e também um balanço que contém todos os valor de entrada, saída, e o total:
 ```
 {
       "id": "uuid",
@@ -51,7 +52,7 @@ Ao usar a requisição HTTP do tipo GET, será exibido, além de todas as transa
   }
   ```
   
-  A aplicação também possui uma rota de deletar uma transação, atavés de uma requisição do tipo DELETE, passando como parâmetro na URL o id da transaction criada.
+  A aplicação também possui uma rota de deletar uma transação, atavés de uma requisição do tipo **DELETE**, passando como parâmetro na URL o id da transaction criada.
   EX: https://localhost:3333/transactions/<id_da_transaction>
   
   Outra funcionalidade é a possibilidade de importar arquivos do tipo CSV através de upload.
